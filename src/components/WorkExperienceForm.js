@@ -182,7 +182,9 @@ class WorkExperienceForm extends Component {
             />
             <button type="submit">Submit</button>
           </form>
-          <WorkExperience workExps={workExps} deleteWorkExp = {this.deleteWorkExp} setUpdateEmployer = {this.setUpdateEmployer} setUpdatePosition = {this.setUpdatePosition} setUpdateStartDate = {this.setUpdateStartDate} setUpdateEndDate = {this.setUpdateEndDate}/>
+          <WorkExperience genInfos={this.props.genInfos} deletegenInfo = {this.props.deletegenInfo} setUpdateName = {this.props.setUpdateName} setUpdateEmail = {this.props.setUpdateEmail} setUpdatePhone = {this.props.setUpdatePhone}
+          eduExps={this.props.eduExps} deleteEduExp = {this.props.deleteEduExp} setUpdateSchoolName = {this.props.setUpdateSchoolName} setUpdateDegree = {this.props.setUpdateDegree} setUpdateMajor = {this.props.setUpdateMajor} 
+          workExps={workExps} deleteWorkExp = {this.deleteWorkExp} setUpdateEmployer = {this.setUpdateEmployer} setUpdatePosition = {this.setUpdatePosition} setUpdateStartDate = {this.setUpdateStartDate} setUpdateEndDate = {this.setUpdateEndDate}/>
         </div>
       );
     

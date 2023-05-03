@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GeneralInformation from "./GeneralInformation";
+import EducationalExperienceForm from "./EducationalExperienceForm";
 import uniqid from "uniqid";
 
 class GeneralInformationForm extends Component {
@@ -20,6 +21,7 @@ class GeneralInformationForm extends Component {
     this.handleChangegenInfoPhone = this.handleChangegenInfoPhone.bind(this);
     this.deletegenInfo = this.deletegenInfo.bind(this);
     this.onSubmitgenInfo = this.onSubmitgenInfo.bind(this);
+    this.submitWithoutAction = this.submitWithoutAction.bind(this);
     this.setUpdateName = this.setUpdateName.bind(this);
     this.setUpdateEmail = this.setUpdateEmail.bind(this);
     this.setUpdatePhone = this.setUpdatePhone.bind(this);
@@ -70,6 +72,18 @@ class GeneralInformationForm extends Component {
     e.preventDefault();
     this.setState({
       genInfos: this.state.genInfos.concat(this.state.genInfo),
+      genInfo: {
+         CVOwnerName: '',
+         email: '',
+         phone: '', 
+         id: uniqid()
+     },
+    });
+  };
+
+  submitWithoutAction = (e) => {
+    e.preventDefault();
+    this.setState({
       genInfo: {
         CVOwnerName: '',
         email: '',
@@ -147,14 +161,45 @@ class GeneralInformationForm extends Component {
             />
             <button type="submit">Submit</button>
           </form>
-          <GeneralInformation genInfos={genInfos} deletegenInfo = {this.deletegenInfo} setUpdateName = {this.setUpdateName} setUpdateEmail = {this.setUpdateEmail} setUpdatePhone = {this.setUpdatePhone}/>
+          {/* <GeneralInformation genInfos={genInfos} deletegenInfo = {this.deletegenInfo} setUpdateName = {this.setUpdateName} setUpdateEmail = {this.setUpdateEmail} setUpdatePhone = {this.setUpdatePhone}/> */}
+          <EducationalExperienceForm genInfos={genInfos} setUpdateName = {this.setUpdateName} setUpdateEmail = {this.setUpdateEmail} setUpdatePhone = {this.setUpdatePhone} />
         </div>
       );
     }
     else{
       return (
-        <GeneralInformation genInfos={genInfos} deletegenInfo = {this.deletegenInfo} setUpdateName = {this.setUpdateName} setUpdateEmail = {this.setUpdateEmail} setUpdatePhone = {this.setUpdatePhone}/>
-      )
+        <div>
+          <form onSubmit={this.submitWithoutAction}>
+            <label htmlFor="genInfoNameInput">Name:  </label>
+            <input
+              onChange={this.handleChangegenInfoName}
+              value={genInfo.CVOwnerName}
+              type="text"
+              id="genInfoNameInput"
+              readOnly
+            />
+            <label htmlFor="genInfoemailInput">Email:  </label>
+            <input
+              onChange={this.handleChangegenInfoemail}
+              value={genInfo.email}
+              type="text"
+              id="genInfoemailInput"
+              readOnly
+            />
+            <label htmlFor="genInfoPhoneInput">Phone:  </label>
+            <input
+              onChange={this.handleChangegenInfoPhone}
+              value={genInfo.phone}
+              type="text"
+              id="genInfoPhoneInput"
+              readOnly
+            />
+            <button type="submit">Submit</button>
+          </form>
+          {/* <GeneralInformation genInfos={genInfos} deletegenInfo = {this.deletegenInfo} setUpdateName = {this.setUpdateName} setUpdateEmail = {this.setUpdateEmail} setUpdatePhone = {this.setUpdatePhone}/> */}
+          <EducationalExperienceForm genInfos={genInfos} setUpdateName = {this.setUpdateName} setUpdateEmail = {this.setUpdateEmail} setUpdatePhone = {this.setUpdatePhone} />
+        </div>
+      );
     }
     
   }

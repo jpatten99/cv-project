@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import EducationalExperience from "./EducationalExperience";
 import uniqid from "uniqid";
+import WorkExperienceForm from "./WorkExperienceForm";
 
 class EducationalExperienceForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       eduExp: {
         schoolName: '',
@@ -144,7 +145,8 @@ class EducationalExperienceForm extends Component {
             />
             <button type="submit">Submit</button>
           </form>
-          <EducationalExperience eduExps={eduExps} deleteEduExp = {this.deleteEduExp} setUpdateSchoolName = {this.setUpdateSchoolName} setUpdateDegree = {this.setUpdateDegree} setUpdateMajor = {this.setUpdateMajor}/>
+          {/* <EducationalExperience eduExps={eduExps} deleteEduExp = {this.deleteEduExp} setUpdateSchoolName = {this.setUpdateSchoolName} setUpdateDegree = {this.setUpdateDegree} setUpdateMajor = {this.setUpdateMajor}/> */}
+          <WorkExperienceForm genInfos={this.props.genInfos} deletegenInfo = {this.props.deletegenInfo} setUpdateName = {this.props.setUpdateName} setUpdateEmail = {this.props.setUpdateEmail} setUpdatePhone = {this.props.setUpdatePhone} eduExps={eduExps} deleteEduExp = {this.deleteEduExp} setUpdateSchoolName = {this.setUpdateSchoolName} setUpdateDegree = {this.setUpdateDegree} setUpdateMajor = {this.setUpdateMajor}/>
         </div>
       );
     

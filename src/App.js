@@ -16,8 +16,8 @@ class App extends Component {
     return (
       <div>
         <GeneralInformationForm />
-        <EducationalExperienceForm />
-        <WorkExperienceForm />
+        {/* <EducationalExperienceForm />
+        <WorkExperienceForm /> */}
       </div>
     );
   }

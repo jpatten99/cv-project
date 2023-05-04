@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import EducationalExperience from "./EducationalExperience";
 import uniqid from "uniqid";
 import WorkExperienceForm from "./WorkExperienceForm";
 
@@ -29,8 +28,8 @@ class EducationalExperienceForm extends Component {
     this.setState({
       eduExp: {
         schoolName: e.target.value,
-        degree: document.getElementById('eduExpDegreeInput').value !== undefined ? document.getElementById('eduExpDegreeInput').value : "",
-        major: document.getElementById('eduExpMajorInput').value !== undefined ? document.getElementById('eduExpMajorInput').value : "",
+        degree: this.state.eduExp.degree,
+        major: this.state.eduExp.major,
         id: this.state.eduExp.id,
       },
     });
@@ -39,9 +38,9 @@ class EducationalExperienceForm extends Component {
   handleChangeEduExpDegree = (e) => {
     this.setState({
       eduExp: {
-        schoolName: document.getElementById('eduExpSchoolNameInput').value !== undefined ? document.getElementById('eduExpSchoolNameInput').value : "",
+        schoolName: this.state.eduExp.schoolName,
         degree: e.target.value,
-        major: document.getElementById('eduExpMajorInput').value !== undefined ? document.getElementById('eduExpMajorInput').value : "",
+        major: this.state.eduExp.major,
         id: this.state.eduExp.id,
       },
     });
@@ -50,8 +49,8 @@ class EducationalExperienceForm extends Component {
   handleChangeEduExpMajor = (e) => {
     this.setState({
       eduExp: {
-        schoolName: document.getElementById('eduExpSchoolNameInput').value !== undefined ? document.getElementById('eduExpSchoolNameInput').value : "",
-        degree: document.getElementById('eduExpDegreeInput').value !== undefined ? document.getElementById('eduExpDegreeInput').value : "",
+        schoolName: this.state.eduExp.schoolName,
+        degree: this.state.eduExp.degree,
         major: e.target.value,
         id: this.state.eduExp.id,
       },

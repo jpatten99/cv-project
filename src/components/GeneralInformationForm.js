@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import GeneralInformation from "./GeneralInformation";
 import EducationalExperienceForm from "./EducationalExperienceForm";
 import uniqid from "uniqid";
 
@@ -31,8 +30,8 @@ class GeneralInformationForm extends Component {
     this.setState({
       genInfo: {
         CVOwnerName: e.target.value,
-        email: document.getElementById('genInfoemailInput').value !== undefined ? document.getElementById('genInfoemailInput').value : "",
-        phone: document.getElementById('genInfoPhoneInput').value !== undefined ? document.getElementById('genInfoPhoneInput').value : "",
+        email: this.state.genInfo.email,
+        phone: this.state.genInfo.phone,
         id: this.state.genInfo.id,
       },
     });
@@ -41,9 +40,9 @@ class GeneralInformationForm extends Component {
   handleChangegenInfoemail = (e) => {
     this.setState({
       genInfo: {
-        CVOwnerName: document.getElementById('genInfoNameInput').value !== undefined ? document.getElementById('genInfoNameInput').value : "",
+        CVOwnerName: this.state.genInfo.CVOwnerName,
         email: e.target.value,
-        phone: document.getElementById('genInfoPhoneInput').value !== undefined ? document.getElementById('genInfoPhoneInput').value : "",
+        phone: this.state.genInfo.phone,
         id: this.state.genInfo.id,
       },
     });
@@ -52,8 +51,8 @@ class GeneralInformationForm extends Component {
   handleChangegenInfoPhone = (e) => {
     this.setState({
       genInfo: {
-        CVOwnerName: document.getElementById('genInfoNameInput').value !== undefined ? document.getElementById('genInfoNameInput').value : "",
-        email: document.getElementById('genInfoemailInput').value !== undefined ? document.getElementById('genInfoemailInput').value : "",
+        CVOwnerName: this.state.genInfo.CVOwnerName,
+        email: this.state.genInfo.email,
         phone: e.target.value,
         id: this.state.genInfo.id,
       },

@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/GeneralInformation.css';
 
 const WorkExperience = (props) => {
-  const { genInfos, deletegenInfo, eduExps, deleteEduExp, workExps, deleteWorkExp } = props;
+  const { genInfos, eduExps, deleteEduExp, workExps, deleteWorkExp } = props;
   const genInfoList = genInfos.map(genInfo => {
     return <div key={genInfo.id} id={genInfo.id}>
       <p>Name: 
@@ -152,7 +152,7 @@ const WorkExperience = (props) => {
     </div>
   })
   return (
-    <div>
+    <div className="display-CV">
       {genInfoList}
       {eduExpList}
       {workExpList}

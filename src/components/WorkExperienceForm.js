@@ -3,8 +3,8 @@ import WorkExperience from "./WorkExperience";
 import uniqid from "uniqid";
 
 class WorkExperienceForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       workExp: {
         employer: '',
@@ -30,9 +30,9 @@ class WorkExperienceForm extends Component {
     this.setState({
       workExp: {
         employer: e.target.value,
-        position: document.getElementById('workExpPositionInput').value !== undefined ? document.getElementById('workExpPositionInput').value : "",
-        startDate: document.getElementById('workExpStartDateInput').value !== undefined ? document.getElementById('workExpStartDateInput').value : "",
-        endDate: document.getElementById('workExpEndDateInput').value !== undefined ? document.getElementById('workExpEndDateInput').value : "",
+        position: this.state.workExp.position,
+        startDate: this.state.workExp.startDate,
+        endDate: this.state.workExp.endDate,
         id: this.state.workExp.id,
       },
     });
@@ -41,10 +41,10 @@ class WorkExperienceForm extends Component {
   handleChangeWorkExpPosition = (e) => {
     this.setState({
       workExp: {
-        employer: document.getElementById('workExpEmployerInput').value !== undefined ? document.getElementById('workExpEmployerInput').value : "",
+        employer: this.state.workExp.employer,
         position: e.target.value,
-        startDate: document.getElementById('workExpStartDateInput').value !== undefined ? document.getElementById('workExpStartDateInput').value : "",
-        endDate: document.getElementById('workExpEndDateInput').value !== undefined ? document.getElementById('workExpEndDateInput').value : "",
+        startDate: this.state.workExp.startDate,
+        endDate: this.state.workExp.endDate,
         id: this.state.workExp.id,
       },
     });
@@ -53,10 +53,10 @@ class WorkExperienceForm extends Component {
   handleChangeWorkExpStartDate = (e) => {
     this.setState({
       workExp: {
-        employer: document.getElementById('workExpEmployerInput').value !== undefined ? document.getElementById('workExpEmployerInput').value : "",
-        position: document.getElementById('workExpPositionInput').value !== undefined ? document.getElementById('workExpPositionInput').value : "",
+        employer: this.state.workExp.employer,
+        position: this.state.workExp.position,
         startDate: e.target.value,
-        endDate: document.getElementById('workExpEndDateInput').value !== undefined ? document.getElementById('workExpEndDateInput').value : "",
+        endDate: this.state.workExp.endDate,
         id: this.state.workExp.id,
       },
     });
@@ -65,9 +65,9 @@ class WorkExperienceForm extends Component {
   handleChangeWorkExpEndDate = (e) => {
     this.setState({
       workExp: {
-        employer: document.getElementById('workExpEmployerInput').value !== undefined ? document.getElementById('workExpEmployerInput').value : "",
-        position: document.getElementById('workExpPositionInput').value !== undefined ? document.getElementById('workExpPositionInput').value : "",
-        startDate: document.getElementById('workExpStartDateInput').value !== undefined ? document.getElementById('workExpStartDateInput').value : "",
+        employer: this.state.workExp.employer,
+        position: this.state.workExp.position,
+        startDate: this.state.workExp.startDate,
         endDate: e.target.value,
         id: this.state.workExp.id,
       },

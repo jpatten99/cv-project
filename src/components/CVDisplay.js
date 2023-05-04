@@ -1,7 +1,7 @@
 import React from "react";
-import '../styles/GeneralInformation.css';
+import '../App.css';
 
-const WorkExperience = (props) => {
+const CVDisplay = (props) => {
   const { genInfos, eduExps, deleteEduExp, workExps, deleteWorkExp } = props;
   const genInfoList = genInfos.map(genInfo => {
     return <div key={genInfo.id} id={genInfo.id}>
@@ -160,4 +160,4 @@ const WorkExperience = (props) => {
   );
 };
 
-export default WorkExperience;
+export default CVDisplay;

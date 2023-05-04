@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.editable{
+  border: 0px;
+}
+
+/* #forms{
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */

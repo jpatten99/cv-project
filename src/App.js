@@ -77,6 +77,7 @@ class App extends Component {
     this.setUpdateEmployer = this.setUpdateEmployer.bind(this);
     this.setUpdatePosition = this.setUpdatePosition.bind(this);
     this.setUpdateStartDate = this.setUpdateStartDate.bind(this);
+    this.setUpdateEndDate = this.setUpdateEndDate.bind(this);
   }
 
   handleChangegenInfoName = (e) => {

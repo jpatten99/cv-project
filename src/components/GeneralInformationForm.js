@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../App.css';
 
 
 class GeneralInformationForm extends Component {
@@ -11,8 +12,9 @@ class GeneralInformationForm extends Component {
     const { genInfos, onSubmitgenInfo, handleChangegenInfoName, CVOwnerName, handleChangegenInfoemail, email, handleChangegenInfoPhone, phone, submitWithoutAction} = this.props;
     if(genInfos.length===0){
       return (
-        <div>
-          <form onSubmit={onSubmitgenInfo}>
+        <div id="generalInfo-div">
+          <h2>Add General Information:</h2>
+          <form onSubmit={onSubmitgenInfo} className="top-form">
             <label htmlFor="genInfoNameInput">Name:  </label>
             <input
               onChange={handleChangegenInfoName}
@@ -41,8 +43,9 @@ class GeneralInformationForm extends Component {
     }
     else{
       return (
-        <div>
-          <form onSubmit={submitWithoutAction}>
+        <div id="generalInfo-div">
+          <h2>Add General Information:</h2>
+          <form onSubmit={submitWithoutAction} className="top-form">
             <label htmlFor="genInfoNameInput">Name:  </label>
             <input
               onChange={handleChangegenInfoName}

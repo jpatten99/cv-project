@@ -37,12 +37,53 @@
   }
 }
 
+#all-content{
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+}
+
+#header{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+#header-text{
+  color: white;
+}
+
+form > input {
+  width: 95%;
+}
+
 .editable{
   border: 0px;
 }
 
-/* #forms{
-  background-color: blue;
+#forms{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-} */
+}
+
+#top-form{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+
+#generalInfo-div{
+  background-color: rgba(21, 57, 127, 0.5);
+}
+
+#eduExp-div{
+  background-color: rgba(255, 218, 0, 0.5);
+}
+
+#workExp-div{
+  background-color: rgba(21, 57, 127, 0.5);
+}
+
+p > input{
+  width: 300px;
+}

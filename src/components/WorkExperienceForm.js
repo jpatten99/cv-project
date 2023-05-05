@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../App.css';
 
 class WorkExperienceForm extends Component {
   // constructor(props) {
@@ -7,8 +8,9 @@ class WorkExperienceForm extends Component {
   render() {
     const { onSubmitWorkExp, handleChangeWorkExpEmployer, employer, handleChangeWorkExpPosition, position, handleChangeWorkExpStartDate, startDate, handleChangeWorkExpEndDate, endDate} = this.props;
       return (
-        <div>
-          <form onSubmit={onSubmitWorkExp}>
+        <div id="workExp-div">
+          <h2>Add Work Experience:</h2>
+          <form onSubmit={onSubmitWorkExp} className="top-form">
             <label htmlFor="workExpEmployerInput">Employer:  </label>
             <input
               onChange={handleChangeWorkExpEmployer}

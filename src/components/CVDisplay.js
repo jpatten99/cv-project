@@ -4,49 +4,50 @@ import '../App.css';
 const CVDisplay = (props) => {
   const { genInfos, eduExps, deleteEduExp, workExps, deleteWorkExp } = props;
   const genInfoList = genInfos.map(genInfo => {
-    return <div key={genInfo.id} id={genInfo.id}>
-      <p>Name: 
+    return (
+      <div key={genInfo.id} id={genInfo.id}>
+        <p>Name: 
+          <input
+            className="editable"
+            type="text"
+            id={genInfo.id}
+            value={genInfo.CVOwnerName}
+            onChange={
+              (e) =>{
+                props.setUpdateName(e.target.value, genInfo.id)
+              }
+            }
+          ></input>
+        </p>
+        <p>Email:&nbsp;&nbsp;
         <input
-          className="editable"
-          type="text"
-          id={genInfo.id}
-          value={genInfo.CVOwnerName}
-          onChange={
-            (e) =>{
-              props.setUpdateName(e.target.value, genInfo.id)
+            className="editable"
+            type="text"
+            id={genInfo.id}
+            value={genInfo.email}
+            onChange={
+              (e) =>{
+                props.setUpdateEmail(e.target.value, genInfo.id)
+              }
             }
-          }
-        ></input>
-      </p>
-      <p>Email:
-      <input
-          className="editable"
-          type="text"
-          id={genInfo.id}
-          value={genInfo.email}
-          onChange={
-            (e) =>{
-              props.setUpdateEmail(e.target.value, genInfo.id)
+          ></input>
+        </p>
+        <p>Phone:
+        <input
+            className="editable"
+            type="text"
+            id={genInfo.id}
+            value={genInfo.phone}
+            onChange={
+              (e) =>{
+                props.setUpdatePhone(e.target.value, genInfo.id)
+              }
             }
-          }
-        ></input>
-      </p>
-      <p>Phone:
-      <input
-          className="editable"
-          type="text"
-          id={genInfo.id}
-          value={genInfo.phone}
-          onChange={
-            (e) =>{
-              props.setUpdatePhone(e.target.value, genInfo.id)
-            }
-          }
-        ></input>
-      </p>
-      {/* <button onClick={ () => deletegenInfo(genInfo.id) }>Delete</button> */}
-      <span></span>
-    </div>
+          ></input>
+        </p>
+        {/* <button onClick={ () => deletegenInfo(genInfo.id) }>Delete</button> */}
+      </div>
+    )
   })
   const eduExpList = eduExps.map(eduExp => {
     return <div key={eduExp.id} id={eduExp.id}>
@@ -90,7 +91,6 @@ const CVDisplay = (props) => {
         ></input>
       </p>
       <button onClick={ () => deleteEduExp(eduExp.id) }>Delete</button>
-      <span></span>
     </div>
   })
   const workExpList = workExps.map(workExp => {
@@ -148,7 +148,6 @@ const CVDisplay = (props) => {
         ></input>
       </p>
       <button onClick={ () => deleteWorkExp(workExp.id) }>Delete</button>
-      <span></span>
     </div>
   })
   return (

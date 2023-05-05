@@ -402,13 +402,18 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <div id="forms">
-          <GeneralInformationForm genInfos = {this.state.genInfos} onSubmitgenInfo = {this.onSubmitgenInfo} handleChangegenInfoName = {this.handleChangegenInfoName} CVOwnerName = {this.state.genInfo.CVOwnerName} handleChangegenInfoemail = {this.handleChangegenInfoemail} email = {this.state.genInfo.email} handleChangegenInfoPhone = {this.handleChangegenInfoPhone} phone = {this.state.genInfo.phone} submitWithoutAction = {this.submitWithoutAction}/>
-          <EducationalExperienceForm  onSubmitEduExp = {this.onSubmitEduExp} handleChangeEduExpSchoolName = {this.handleChangeEduExpSchoolName} schoolName = {this.state.eduExp.schoolName} handleChangeEduExpDegree = {this.handleChangeEduExpDegree} degree = {this.state.eduExp.degree} handleChangeEduExpMajor = {this.handleChangeEduExpMajor} major = {this.state.eduExp.major}/>
-          <WorkExperienceForm  onSubmitWorkExp = {this.onSubmitWorkExp} handleChangeWorkExpEmployer = {this.handleChangeWorkExpEmployer} employer = {this.state.workExp.employer} handleChangeWorkExpPosition = {this.handleChangeWorkExpPosition} position = {this.state.workExp.position} handleChangeWorkExpStartDate = {this.handleChangeWorkExpStartDate} startDate = {this.state.workExp.startDate} handleChangeWorkExpEndDate = {this.handleChangeWorkExpEndDate} endDate = {this.state.workExp.endDate}/>
+      <div id="all-content">
+        <div id="header">
+          <h1 id="header-text">CV Creator</h1>
         </div>
-        <CVDisplay genInfos = {this.state.genInfos} eduExps = {this.state.eduExps} deleteEduExp = {this.deleteEduExp} workExps = {this.state.workExps} deleteWorkExp = {this.deleteWorkExp}/>
+        <div id='below-header'>
+          <div id="forms">
+            <GeneralInformationForm genInfos = {this.state.genInfos} onSubmitgenInfo = {this.onSubmitgenInfo} handleChangegenInfoName = {this.handleChangegenInfoName} CVOwnerName = {this.state.genInfo.CVOwnerName} handleChangegenInfoemail = {this.handleChangegenInfoemail} email = {this.state.genInfo.email} handleChangegenInfoPhone = {this.handleChangegenInfoPhone} phone = {this.state.genInfo.phone} submitWithoutAction = {this.submitWithoutAction}/>
+            <EducationalExperienceForm  onSubmitEduExp = {this.onSubmitEduExp} handleChangeEduExpSchoolName = {this.handleChangeEduExpSchoolName} schoolName = {this.state.eduExp.schoolName} handleChangeEduExpDegree = {this.handleChangeEduExpDegree} degree = {this.state.eduExp.degree} handleChangeEduExpMajor = {this.handleChangeEduExpMajor} major = {this.state.eduExp.major}/>
+            <WorkExperienceForm  onSubmitWorkExp = {this.onSubmitWorkExp} handleChangeWorkExpEmployer = {this.handleChangeWorkExpEmployer} employer = {this.state.workExp.employer} handleChangeWorkExpPosition = {this.handleChangeWorkExpPosition} position = {this.state.workExp.position} handleChangeWorkExpStartDate = {this.handleChangeWorkExpStartDate} startDate = {this.state.workExp.startDate} handleChangeWorkExpEndDate = {this.handleChangeWorkExpEndDate} endDate = {this.state.workExp.endDate}/>
+          </div>
+          <CVDisplay genInfos = {this.state.genInfos} eduExps = {this.state.eduExps} deleteEduExp = {this.deleteEduExp} workExps = {this.state.workExps} deleteWorkExp = {this.deleteWorkExp}/>
+        </div>
       </div>
     );
   }

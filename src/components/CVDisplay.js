@@ -2,7 +2,7 @@ import React from "react";
 import '../App.css';
 
 const CVDisplay = (props) => {
-  const { genInfos, eduExps, deleteEduExp, workExps, deleteWorkExp } = props;
+  const { genInfos, setUpdateName, setUpdateEmail, setUpdatePhone, eduExps, setUpdateSchoolName, setUpdateDegree, setUpdateMajor, deleteEduExp, workExps, setUpdateEmployer, setUpdatePosition, setUpdateStartDate, setUpdateEndDate, deleteWorkExp} = props;
   const genInfoList = genInfos.map(genInfo => {
     return (
       <div key={genInfo.id} id={genInfo.id}>
@@ -14,7 +14,7 @@ const CVDisplay = (props) => {
             value={genInfo.CVOwnerName}
             onChange={
               (e) =>{
-                props.setUpdateName(e.target.value, genInfo.id)
+                setUpdateName(e.target.value, genInfo.id)
               }
             }
           ></input>
@@ -27,7 +27,7 @@ const CVDisplay = (props) => {
             value={genInfo.email}
             onChange={
               (e) =>{
-                props.setUpdateEmail(e.target.value, genInfo.id)
+                setUpdateEmail(e.target.value, genInfo.id)
               }
             }
           ></input>
@@ -40,7 +40,7 @@ const CVDisplay = (props) => {
             value={genInfo.phone}
             onChange={
               (e) =>{
-                props.setUpdatePhone(e.target.value, genInfo.id)
+                setUpdatePhone(e.target.value, genInfo.id)
               }
             }
           ></input>
@@ -59,7 +59,7 @@ const CVDisplay = (props) => {
           value={eduExp.schoolName}
           onChange={
             (e) =>{
-              props.setUpdateSchoolName(e.target.value, eduExp.id)
+              setUpdateSchoolName(e.target.value, eduExp.id)
             }
           }
         ></input>
@@ -72,7 +72,7 @@ const CVDisplay = (props) => {
           value={eduExp.degree}
           onChange={
             (e) =>{
-              props.setUpdateDegree(e.target.value, eduExp.id)
+              setUpdateDegree(e.target.value, eduExp.id)
             }
           }
         ></input>
@@ -85,7 +85,7 @@ const CVDisplay = (props) => {
           value={eduExp.major}
           onChange={
             (e) =>{
-              props.setUpdateMajor(e.target.value, eduExp.id)
+              setUpdateMajor(e.target.value, eduExp.id)
             }
           }
         ></input>
@@ -103,7 +103,7 @@ const CVDisplay = (props) => {
           value={workExp.employer}
           onChange={
             (e) =>{
-              props.setUpdateEmployer(e.target.value, workExp.id)
+              setUpdateEmployer(e.target.value, workExp.id)
             }
           }
         ></input>
@@ -116,7 +116,7 @@ const CVDisplay = (props) => {
           value={workExp.position}
           onChange={
             (e) =>{
-              props.setUpdatePosition(e.target.value, workExp.id)
+              setUpdatePosition(e.target.value, workExp.id)
             }
           }
         ></input>
@@ -129,7 +129,7 @@ const CVDisplay = (props) => {
           value={workExp.startDate}
           onChange={
             (e) =>{
-              props.setUpdateStartDate(e.target.value, workExp.id)
+              setUpdateStartDate(e.target.value, workExp.id)
             }
           }
         ></input>
@@ -142,7 +142,7 @@ const CVDisplay = (props) => {
           value={workExp.endDate}
           onChange={
             (e) =>{
-              props.setUpdateEndDate(e.target.value, workExp.id)
+              setUpdateEndDate(e.target.value, workExp.id)
             }
           }
         ></input>

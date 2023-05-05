@@ -412,7 +412,7 @@ class App extends Component {
             <EducationalExperienceForm  onSubmitEduExp = {this.onSubmitEduExp} handleChangeEduExpSchoolName = {this.handleChangeEduExpSchoolName} schoolName = {this.state.eduExp.schoolName} handleChangeEduExpDegree = {this.handleChangeEduExpDegree} degree = {this.state.eduExp.degree} handleChangeEduExpMajor = {this.handleChangeEduExpMajor} major = {this.state.eduExp.major}/>
             <WorkExperienceForm  onSubmitWorkExp = {this.onSubmitWorkExp} handleChangeWorkExpEmployer = {this.handleChangeWorkExpEmployer} employer = {this.state.workExp.employer} handleChangeWorkExpPosition = {this.handleChangeWorkExpPosition} position = {this.state.workExp.position} handleChangeWorkExpStartDate = {this.handleChangeWorkExpStartDate} startDate = {this.state.workExp.startDate} handleChangeWorkExpEndDate = {this.handleChangeWorkExpEndDate} endDate = {this.state.workExp.endDate}/>
           </div>
-          <CVDisplay genInfos = {this.state.genInfos} eduExps = {this.state.eduExps} deleteEduExp = {this.deleteEduExp} workExps = {this.state.workExps} deleteWorkExp = {this.deleteWorkExp}/>
+            <CVDisplay genInfos = {this.state.genInfos} setUpdateName = {this.setUpdateName} setUpdateEmail = {this.setUpdateEmail} setUpdatePhone = {this.setUpdatePhone} eduExps = {this.state.eduExps} setUpdateSchoolName = {this.setUpdateSchoolName} setUpdateDegree = {this.setUpdateDegree}  setUpdateMajor = {this.setUpdateMajor} deleteEduExp = {this.deleteEduExp} workExps = {this.state.workExps} setUpdateEmployer = {this.setUpdateEmployer} setUpdatePosition = {this.setUpdatePosition} setUpdateStartDate = {this.setUpdateStartDate} setUpdateEndDate = {this.setUpdateEndDate} deleteWorkExp = {this.deleteWorkExp}/>
         </div>
       </div>
     );

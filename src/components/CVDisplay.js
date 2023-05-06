@@ -5,9 +5,10 @@ const CVDisplay = (props) => {
   const { genInfos, setUpdateName, setUpdateEmail, setUpdatePhone, eduExps, setUpdateSchoolName, setUpdateDegree, setUpdateMajor, deleteEduExp, workExps, setUpdateEmployer, setUpdatePosition, setUpdateStartDate, setUpdateEndDate, deleteWorkExp} = props;
   const genInfoList = genInfos.map(genInfo => {
     return (
-      <div key={genInfo.id} id={genInfo.id}>
-        <p>Name: 
+      <div key={genInfo.id} id="grid-genInfo">
+        <p id="CV-name-display"> 
           <input
+            style = {{fontSize: "22px"}}
             className="editable"
             type="text"
             id={genInfo.id}
@@ -19,8 +20,9 @@ const CVDisplay = (props) => {
             }
           ></input>
         </p>
-        <p>Email:&nbsp;&nbsp;
+        <p id="CV-email-display">
         <input
+            style = {{fontSize: "16px"}}
             className="editable"
             type="text"
             id={genInfo.id}
@@ -32,8 +34,9 @@ const CVDisplay = (props) => {
             }
           ></input>
         </p>
-        <p>Phone:
+        <p id="CV-phone-display">
         <input
+            style = {{fontSize: "16px"}}
             className="editable"
             type="text"
             id={genInfo.id}
@@ -50,8 +53,8 @@ const CVDisplay = (props) => {
     )
   })
   const eduExpList = eduExps.map(eduExp => {
-    return <div key={eduExp.id} id={eduExp.id}>
-      <p>School: 
+    return <div key={eduExp.id} className="grid-eduExp">
+      <p id="CV-school-display"> 
         <input
           className="editable"
           type="text"
@@ -64,7 +67,7 @@ const CVDisplay = (props) => {
           }
         ></input>
       </p>
-      <p>Degree:
+      <p className="CV-degree-and-major-display">
       <input
           className="editable"
           type="text"
@@ -77,7 +80,7 @@ const CVDisplay = (props) => {
           }
         ></input>
       </p>
-      <p>Major:
+      <p className="CV-degree-and-major-display">
       <input
           className="editable"
           type="text"
@@ -90,12 +93,12 @@ const CVDisplay = (props) => {
           }
         ></input>
       </p>
-      <button onClick={ () => deleteEduExp(eduExp.id) }>Delete</button>
+      <button onClick={ () => deleteEduExp(eduExp.id) } className = "deleteButton">Delete</button>
     </div>
   })
   const workExpList = workExps.map(workExp => {
-    return <div key={workExp.id} id={workExp.id}>
-      <p>Employer: 
+    return <div key={workExp.id} className="grid-workExp">
+      <p className="CV-degree-and-major-display">
         <input
           className="editable"
           type="text"
@@ -108,7 +111,7 @@ const CVDisplay = (props) => {
           }
         ></input>
       </p>
-      <p>Position:
+      <p className="CV-degree-and-major-display">
       <input
           className="editable"
           type="text"
@@ -121,7 +124,7 @@ const CVDisplay = (props) => {
           }
         ></input>
       </p>
-      <p>Start Date:
+      <p className="CV-degree-and-major-display">
       <input
           className="editable"
           type="text"
@@ -134,7 +137,7 @@ const CVDisplay = (props) => {
           }
         ></input>
       </p>
-      <p>End Date:
+      <p className="CV-degree-and-major-display">
       <input
           className="editable"
           type="text"
@@ -147,14 +150,14 @@ const CVDisplay = (props) => {
           }
         ></input>
       </p>
-      <button onClick={ () => deleteWorkExp(workExp.id) }>Delete</button>
+      <button onClick={ () => deleteWorkExp(workExp.id) } className = "deleteButton">Delete</button>
     </div>
   })
   return (
     <div className="display-CV">
       {genInfoList}
-      {eduExpList}
-      {workExpList}
+      <div id="eduExpList-display">{eduExpList}</div>
+      <div id="workExp-display">{workExpList}</div>
     </div>
   );
 };

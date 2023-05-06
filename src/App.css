@@ -86,4 +86,77 @@ form > input {
 
 p > input{
   width: 300px;
+  background-color: rgba(244, 220, 187, 1);
+}
+
+.display-CV{
+  background-color: rgba(244, 220, 187, 1);
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-rows: 100px 1fr 1fr;
+}
+
+#grid-genInfo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-width: 1px 0px;
+  border-color: black;
+  border-style: solid;
+}
+
+.grid-eduExp{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-width: 1px 0px;
+  border-color: black;
+  border-style: solid;
+}
+
+.grid-workExp{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-width: 1px 0px;
+  border-color: black;
+  border-style: solid;
+}
+
+.deleteButton{
+  grid-column: span 2;
+}
+
+#CV-school-display{
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+.CV-degree-and-major-display{
+  display: flex;
+  justify-content: center;
+}
+
+#eduExpList-display{
+  border-width: 1px 0px;
+  border-color: black;
+  border-style: solid;
+}
+
+#CV-name-display{
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+#CV-email-display{
+  display: flex;
+  justify-content: center;
+}
+
+#CV-phone-display{
+  display: flex;
+  justify-content: center;
 }
